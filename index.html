@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Handling</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Handling Example</h1>
+    <p>Click the button to change the background color.</p>
+    <button id="colorChangeButton">Change Color</button>
+
+    <script>
+      const colorChangeButton = document.getElementById("colorChangeButton");
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      colorChangeButton.addEventListener("click", function() {
+        
+        const randomColor = getRandomColor();
+        document.body.style.backgroundColor = randomColor;
+      });
+    </script>
+  </body>
+</html>
